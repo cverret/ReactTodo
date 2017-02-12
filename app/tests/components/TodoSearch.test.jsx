@@ -25,7 +25,7 @@ describe('TodoSearch', () => {
 
     var spy = expect.createSpy();
     var todoSearch = TestUtils.renderIntoDocument(<TodoSearch onSearch={spy}/>)
-    var $el = $(ReactDOM.findDOMNode(todoSearch));
+
     todoSearch.refs.showCompleted.checked = true;
     TestUtils.Simulate.change(todoSearch.refs.showCompleted);
     expect(spy).toHaveBeenCalledWith(true, '');
